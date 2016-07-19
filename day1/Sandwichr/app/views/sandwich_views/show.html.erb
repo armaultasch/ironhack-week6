@@ -1,0 +1,38 @@
+<!-- show.html.erb -->
+
+
+<h1><%=@sandwich.name.capitalize %> Sandwich Details </h1>
+<ul> 
+
+	<li> Name:
+		<%= @sandwich.name%> </li> <br> 
+		<li> Bread Type:
+		<%= @sandwich.bread_type%> </li> <br>
+		<li> Ingredients:
+			<br>
+	<% @ingredients.each do |ingredient| %>
+	
+			Name:
+			<%= ingredient.name%> <br>
+			Calories:
+			<%= ingredient.calories%> <br>
+		
+	
+
+<% end %>
+</li>
+</ul>
+
+<h2> Other Ingredients: </h2>
+<form class="sandy_class" data-sandwich-id = <%= @sandwich.id %>>
+	<ul>
+ <% @ingredients_array.each do |ing| %>
+
+	<input class="button"  data-ingredient-id = <%=ing.id%> type="radio" name="ingredient"> Name: <%= ing.name %><br>
+		Calories:
+	<%= ing.calories %> <br>
+	<p> </p>
+	<% end %>
+</ul>
+</form>
+

@@ -1,0 +1,15 @@
+<!-- index.html.erb -->
+
+<h1> Sandwich Details </h1>
+<ul> 
+	<% @sandwich_array.each do |the_sandwich| %>
+	<li>
+		<a href="/sandwiches/<%=the_sandwich.id%>">
+			<%= the_sandwich.name%> 
+		</a>
+	</li>
+
+<% end %>
+</ul>
+
+

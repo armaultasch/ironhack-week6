@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-    resources :sandwiches do
-	resources :ingredients
-	end
-
-	# localhost:3000
-	    # /sandwiches/1  /ingredients/3             /add
-	post "/sandwiches/:id/ingredients/:ingredient_id/add", to: "sandwiches#add_ingredient"
+    resources :sandwiches, only: [:index, :show], controller: "sandwich_views"
+    get "/sandwiches/:id/show" => "sandwiches#show"
+scope "/api" do
+  resources :sandwiches
+  resources :ingredients
+  post "/sandwiches/:id/ingredients/add" => "sandwiches#add_ingredient"
+end
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

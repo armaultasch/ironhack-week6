@@ -18,4 +18,5 @@
  sandwichC = Sandwich.create(name: "chicken salad", bread_type: "wheat")
 
  SandwichIngredient.create(sandwich_id: sandwichA.id, ingredient_id: ingredientB.id)
+  SandwichIngredient.create(sandwich_id: sandwichA.id, ingredient_id: ingredientA.id)
  SandwichIngredient.create(sandwich_id: sandwichB.id, ingredient_id: ingredientC.id)
