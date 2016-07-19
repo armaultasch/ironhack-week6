@@ -8,14 +8,16 @@
 		<%= @sandwich.name%> </li> <br> 
 		<li> Bread Type:
 		<%= @sandwich.bread_type%> </li> <br>
-		<li> Ingredients:
-			<br>
+		<li class="js-list-ing"> Ingredients:
+			<p></p>
+			
 	<% @ingredients.each do |ingredient| %>
 	
 			Name:
 			<%= ingredient.name%> <br>
 			Calories:
 			<%= ingredient.calories%> <br>
+			<p></p> 
 		
 	
 
@@ -28,10 +30,11 @@
 	<ul>
  <% @ingredients_array.each do |ing| %>
 
-	<input class="button"  data-ingredient-id = <%=ing.id%> type="radio" name="ingredient"> Name: <%= ing.name %><br>
+	<input class="button"  data-ingredient-id = <%=ing.id%> data-ingredient-name = <%=ing.name%> data-ingredient-calories = <%=ing.calories%> type="radio" name="ingredient"> Name: <%= ing.name %><br>
 		Calories:
 	<%= ing.calories %> <br>
 	<p> </p>
+
 	<% end %>
 </ul>
 </form>
