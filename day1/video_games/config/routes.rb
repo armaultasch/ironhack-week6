@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :tournaments
+  # resources :tournaments
   get '/' => 'tournaments#index'
+  scope "/api" do
+    # resources :players
+  resources :tournaments, only: [:index, :create], controller: "tournaments_api"
+end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
