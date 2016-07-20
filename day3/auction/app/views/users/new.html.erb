@@ -1,0 +1,13 @@
+<!-- new.html.erb -->
+<h1>Add a User</h1>
+
+<%= form_for @my_user do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, :required => true%>
+
+<%= f.label :email %>
+<%= f.text_field :email, :required => true %>
+
+
+<%= f.button %>
+<% end %>

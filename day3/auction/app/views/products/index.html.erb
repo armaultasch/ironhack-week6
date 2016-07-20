@@ -1,0 +1,18 @@
+<!-- index.html.erb -->
+<h2> List of Products </h2>
+<h1><%= @my_user.name %></h1>
+
+<ul>
+	<% @my_product.each do |product| %>
+	<li>
+		<a href='/users/<%= @my_user.id %>/products/<%= product.id %>'>
+		<%= product.title %> 
+		
+	</li>
+<% end %>
+</ul>
+<a href="/users/<%= @my_user.id %>/products/new">new product entry</a>
+
+<a href="/users/<%= @my_user.id%>">
+	Go Back to User details
+</a>

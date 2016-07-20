@@ -1,0 +1,13 @@
+<!-- new.html.erb -->
+
+<%= form_for [@my_product, @my_bid] do |f| %>
+<%= f.label :email %>
+<%= f.text_field :email, :required => true %>
+<br>
+<%= f.label :amount %>
+<%= f.number_field :amount, :required => true %>
+<br>
+
+
+<%= f.button %>
+<% end %>

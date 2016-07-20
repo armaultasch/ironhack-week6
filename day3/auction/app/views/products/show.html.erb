@@ -1,0 +1,25 @@
+<!-- show.html.erb -->
+<%= @my_product.title %>
+<h3> Deails of Product </h3>
+<%= @my_product.description %>
+<%= @my_product.deadline %>
+<ul>
+<%= @current_bids.each do |bid| %>
+<li>
+	<%= bid.amount %>
+</li>
+<% end %>
+</ul>
+<a href="/users/<%= @my_user.id%>/products">
+	Back to User Products
+</a>
+
+<%= form_for [@my_user, @my_product, @my_bid] do |f| %>
+
+<%= f.label :amount %>
+<%= f.number_field :amount, :required => true %>
+<br>
+
+
+<%= f.button %>
+<% end %>

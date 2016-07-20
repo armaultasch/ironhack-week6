@@ -1,0 +1,15 @@
+<!-- index.html.erb -->
+<h2> List of Users </h2>
+<ul> 
+	<% @my_user.each do |the_user| %>
+	<li>
+		<a href='/users/<%= the_user.id %>'><%= the_user.name%></a>
+		
+	</li>
+<% end %>
+</ul>
+<form action="/users/new" method="GET">
+	<button type="submit">Add User</button>
+  <input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+	</form>

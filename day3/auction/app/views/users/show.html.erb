@@ -1,0 +1,11 @@
+<!-- show.html.erb -->
+<%= @my_user.name %>
+<h3> Deails of User </h3>
+<%= @my_user.email %>
+
+<a href="/users/<%= @my_user.id%>/products">
+	See Products
+</a>
+<a href="/users">
+	See All Users
+</a>
