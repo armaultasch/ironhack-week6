@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  devise_for :installs
     resources :sandwiches, only: [:index, :show], controller: "sandwich_views"
     get "/sandwiches/:id/show" => "sandwiches#show"
 scope "/api" do
